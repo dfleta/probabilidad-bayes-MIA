@@ -1,5 +1,5 @@
 import torch
-from model_pome1 import model
+from model import model
 
 # Calculate probability for a given observation
 
