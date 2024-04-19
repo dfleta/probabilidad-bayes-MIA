@@ -113,3 +113,31 @@ appointment
 `likelihood.py` y `inference.py` son dependientes del módulo `model.py`.
 
 En el código de estos tres ficheros encontrarás la explicación de cómo se codifica la red de bayes en pomegranate.
+
+## Recursos sobre probabilidad y redes de Bayes
+
+Mi compañero [@alejandro](https://github.com/avidaldo) del curso de especialización en IA y Big Data del IES de Teis en la modalidad a distancia ha preparado estos recursos en castellano: [Matemáticas para Machine Learning](https://github.com/avidaldo/mates_ml).
+
+Recordad que esta práctica intenta cubrir los contenidos de los capítulos 12 _Quantifying Uncertainty_ y 13 _Probabilistic Reasoning_ del libro _IA, un enfoque moderno_ de Russell & Norvig. Allí encontraréis explicacos en profundidad los conceptos más importantes sobre teoría de probabilidad que explicamos de manera práctica en clase sobre estos dos supuestos prácticos:
+
+* "Trata de arrancarlo" o "Un sistema de diagnóstico de averías inteligente como asistente para mecánicos", un ejemplo explicado por Sebastian Thrun en su famoso y pionero MOCC sobre IA: 
+
+![Red de Bayes](doc/bayes_network_thrun.png)
+
+* Probabilidades sobre dos dados:
+
+![Espacio de muestras](doc/espacio_de_muestras.png)
+
+Los principios más importantes para comprender la teoría de probabilidades son:
+
+* La letra griega $\Omega$ (omega mayúscula) representa al espacio de muestras, y $\omega$ (omega minúscula) se refiere a los elementos de ese espacio, es decir, a los posibles mundos.
+
+* Los mundos posibles son mútuamente exclusivos y exhaustivos: dos posibles mundos no pueden existir a la vez, y uno de los posibles mundos debe producirse.
+
+* Un modelo de probabilidad completamente especificado asocia una probabilidad numérica $P(ω$) con cada posible mundo.
+
+* El axioma básico de la teoría de la probabilidad enuncia que todo mundo posible tiene una probabilidad entre 0 y 1, y que la probabilidad total del conjunto de posibles mundos es es 1:
+
+$ 0≤P(ω)≤1 $ para todo $\omega$
+
+$$ \sum_{w\in\Omega} P(ω)=1 $$
