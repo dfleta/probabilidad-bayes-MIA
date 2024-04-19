@@ -28,7 +28,7 @@ o
 
 El código codifica la siguiente red de Bayes, en el módulo `model.py`:
 
-![](doc/bayesiannetwork.png)
+![Red de Bayes](doc/bayesiannetwork.png "Red de Bayes ejemplo")
 
 Rain es el nodo raíz de la red. Rain es una variable aleatoria que toma los valores en el dominio atómico `{none, light, heavy}`. Su distribución de probabilidad es:
 
@@ -122,17 +122,17 @@ Recordad que esta práctica intenta cubrir los contenidos de los capítulos 12 _
 
 * "Trata de arrancarlo" o "Un sistema de diagnóstico de averías inteligente como asistente para mecánicos", un ejemplo explicado por Sebastian Thrun en su famoso y pionero MOCC sobre IA: 
 
-![Red de Bayes](doc/bayes_network_thrun.png)
+![Red de Bayes](doc/bayes_network_thrun.png "Red de Bayes diagnóstico de averías")
 
 * Probabilidades sobre dos dados:
 
-![Espacio de muestras](doc/espacio_de_muestras.png)
+![Espacio de muestras](doc/espacio_de_muestras.png "Espacio de muestras tirada de dos dados")
 
 Los principios más importantes para comprender la teoría de probabilidades son:
 
 * La letra griega $\Omega$ (omega mayúscula) representa al espacio de muestras, y $\omega$ (omega minúscula) se refiere a los elementos de ese espacio, es decir, a los posibles mundos.
 
-* Los mundos posibles son mútuamente exclusivos y exhaustivos: dos posibles mundos no pueden existir a la vez, y uno de los posibles mundos debe producirse.
+* Los mundos posibles son mútuamente **exclusivos** y **exhaustivos**: dos posibles mundos no pueden existir a la vez, y uno de los posibles mundos debe producirse.
 
 * Un modelo de probabilidad completamente especificado asocia una probabilidad numérica $P(ω$) con cada posible mundo.
 
