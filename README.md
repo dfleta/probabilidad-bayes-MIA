@@ -86,7 +86,7 @@ tensor([0.3402])
 
 ¿Cuáles son las distribuciones de probabilidades para todas las variables dada una evidencia, una observación?
 
-Dada una observación o evidencia $ e $, aplicamos la inferencia por enumeración iterando sobre las probabilidades de las variables ocultas $ y $ :
+Dada una observación o evidencia $e$, aplicamos la inferencia por enumeración iterando sobre las probabilidades de las variables ocultas $y$ :
 
  $$ P(X|e) = \frac{P(X,e)}{P(e)} = \alpha P(X,e) = \alpha \sum_{y} {P(X,e,y)} $$
 
