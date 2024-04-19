@@ -33,13 +33,13 @@ El código codifica la siguiente red de Bayes, en el módulo `model.py`:
 Rain es el nodo raíz de la red. Rain es una variable aleatoria que toma los valores en el dominio atómico `{none, light, heavy}`. Su distribución de probabilidad es:
 
 | none  | light | heavy |
-| ----- | ----- | ----- |
+| :---: | :---: | :---: |
 |  0.7  |  0.2	|  0.1  |
 
 Maintenance indica si se realiza mantenimiento en la red de transporte, tomando los valores atómicos `{yes, no}`. Rain es el nodo padre de Maintenance, lo que significa que su distribución de probabilidad se ve afectada por por Rain. 
 
 | R     | yes | no  |
-|-------|-----|-----|
+| :----:| :-: |:---:|
 | none  | 0.4 | 0.6 |
 | light | 0.2 | 0.8 |
 | heavy | 0.1 | 0.9 |
@@ -49,7 +49,7 @@ Train es la variable que codifica si el tren llega `{on time, delayed}`. Mainten
  $$ P(X | Padres(X)) $$
 
 | R     | M   | on time | delayed |
-|-------|-----|---------|---------|
+|:-----:|:---:|:-------:|:-------:|
 | none  | yes | 0.8     | 0.2     |
 | none  | no  | 0.9     | 0.1     |
 | light | yes | 0.6     | 0.4     |
@@ -61,7 +61,7 @@ Train es la variable que codifica si el tren llega `{on time, delayed}`. Mainten
 Appointment toma los valores `{attend, miss}`. Es el único nodo padre de Train, indicando que lo que en última instancia afecta a llegar a tiempo a la cita es que el tren llegue puntual o no. Si el tren llega puntual, que llueva de manera torrencial o sea orballo no tiene efecto en llegar a tiempo a la cita.
 
 | T        | attend | miss |
-|----------|--------|------|
+| :-------:|:------:|:----:|
 | on time  | 0.9    | 0.1  |
 | delayed  | 0.6    | 0.4  |
 
@@ -86,7 +86,7 @@ tensor([0.3402])
 
 ¿Cuáles son las distribuciones de probabilidades para todas las variables dada una evidencia, una observación?
 
-Dada una observación o evidencia $ e $, aplicamos la inferencia por enumeración iterando sobre las probabilidades de las variables ocultas $ y $:
+Dada una observación o evidencia $ e $, aplicamos la inferencia por enumeración iterando sobre las probabilidades de las variables ocultas $ y $ :
 
  $$ P(X|e) = \frac{P(X,e)}{P(e)} = \alpha P(X,e) = \alpha \sum_{y} {P(X,e,y)} $$
 
@@ -111,3 +111,5 @@ appointment
 ```
 
 `likelihood.py` y `inference.py` son dependientes del módulo `model.py`.
+
+En el código de estos tres ficheros encontrarás la explicación de cómo se codifica la red de bayes en pomegranate.
