@@ -116,7 +116,7 @@ En el código de estos tres ficheros encontrarás la explicación de cómo se co
 
 #### Ejercicio
 
-Intenta calcular la probabilidad de que llegar a tiempo o tarde a la cita, dependiendo de que el tren llegue puntual y haya lluvia fuerte.
+Intenta calcular la probabilidad de llegar a tiempo o tarde a la cita, dependiendo de que el tren llegue puntual *y se produzca lluvia fuerte*.
 
 ¿Ha cambiado la probabilidad de atender a la cita respecto al ejemplo anterior? ¿Por qué?
 
