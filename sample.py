@@ -1,5 +1,3 @@
-from pomegranate.distributions import ConditionalCategorical
-
 from collections import Counter
 
 from model import model
