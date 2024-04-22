@@ -8,10 +8,10 @@ from model import model
 X = torch.tensor(
     [
         [
-            -1, # [0, 1, 2] == ["none", "light", "heavy"] -1 == no observable
-            -1, # [0, 1] = ["yes", "no"] -1 == no observable
-             1, # [0, 1] == ["on time", "delayed"] -1 == no observable
-            -1, # [0, 1] == ["attend", "miss"] -1 == no observable
+            -1, # rain [0, 1, 2] == ["none", "light", "heavy"] -1 == no observable
+            -1, # maintenance [0, 1] = ["yes", "no"] -1 == no observable
+             1, # train [0, 1] == ["on time", "delayed"] -1 == no observable
+            -1, # appoinment [0, 1] == ["attend", "miss"] -1 == no observable
         ]
     ]
 )

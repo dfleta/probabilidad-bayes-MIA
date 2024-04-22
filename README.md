@@ -114,13 +114,34 @@ appointment
 
 En el código de estos tres ficheros encontrarás la explicación de cómo se codifica la red de bayes en pomegranate.
 
-#### Ejercicio
+#### Ejercicio inferencia
 
 Intenta calcular la probabilidad de llegar a tiempo o tarde a la cita, dependiendo de que el tren llegue puntual *y se produzca lluvia fuerte*.
 
 ¿Ha cambiado la probabilidad de atender a la cita respecto al ejemplo anterior? ¿Por qué?
 
 Chequea la configuración en el fichero `inference_ejercicio.py`.
+
+### Rejection sampling
+
+Como la inferencia por enumeración puede resultar computacionalmente ineficiente, es posible implementar el cálculo de la distribución de la probabilidad de la variable "appoinment" (llegar a la cita) en función de la probabilidad condicionada a que el tren llegue tarde ("delayed"), mediante el método _rejection sampling_. Se trata de tomar N muestras sobre la red de bayes y seleccionar aquellas que verifiquen que:
+
+```python
+[?, ?, 1, 0]  [rain, maintenance, "delayed", "attend"]`
+[?, ?, 1, 1]  [rain, maintenance, "delayed", "miss"]
+```
+
+que corresponden a las de la figura:
+
+![](doc/rejection_sampling.png)
+
+Es un cálculo aproximado de la probabilidad, que variará en función del número de muestras sampleadas que categoricemos en "attend" o "miss", por lo que la ejecución del método en `sample.py` arroja ligeras variaciones en el conteo de cada muestra.
+
+```python
+$ python sample.py
+
+Counter({'attend': 1224, 'miss': 884})
+```
 
 ## Recursos sobre probabilidad y redes de Bayes
 
