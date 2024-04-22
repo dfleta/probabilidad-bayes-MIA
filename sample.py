@@ -34,7 +34,9 @@ samples = model.sample(N)
 # sample[2] == train, 1 == delayed
 # sample[3] == appoinment, 0 == attend, 1 == miss
 
-data = ["attend" if sample[3] == 0 else "miss" for sample in list(filter(lambda sample: sample[2] == 1, samples))]
+data = ["attend" if sample[3] == 0 else "miss"
+        for sample in list(filter(lambda sample: sample[2] == 1,
+        samples))]
 
 # data = ['attend', 'miss']
 

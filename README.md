@@ -116,11 +116,13 @@ En el código de estos tres ficheros encontrarás la explicación de cómo se co
 
 #### Ejercicio inferencia
 
-Intenta calcular la probabilidad de llegar a tiempo o tarde a la cita, dependiendo de que el tren llegue puntual *y se produzca lluvia fuerte*.
+Intenta calcular la probabilidad de llegar a tiempo o tarde a la cita, dependiendo de que el tren llegue tarde ("delayed") *y se produzca lluvia fuerte ("heavy")*.
 
 ¿Ha cambiado la probabilidad de atender a la cita respecto al ejemplo anterior? ¿Por qué?
 
 Chequea la configuración en el fichero `inference_ejercicio.py`.
+
+
 
 ### Rejection sampling
 
@@ -135,13 +137,15 @@ que corresponden a las de la figura:
 
 ![](doc/rejection_sampling.png)
 
-Es un cálculo aproximado de la probabilidad, que variará en función del número de muestras sampleadas que categoricemos en "attend" o "miss", por lo que la ejecución del método en `sample.py` arroja ligeras variaciones en el conteo de cada muestra.
+Es un cálculo aproximado de la probabilidad, que variará en función del número de muestras sampleadas que categoricemos como "attend" o "miss", por lo que la ejecución del método en `sample.py` arroja ligeras variaciones en el conteo de cada muestra.
 
 ```python
 $ python sample.py
 
 Counter({'attend': 1224, 'miss': 884})
 ```
+
+Consulta el módulo `sammple.py`.
 
 ## Recursos sobre probabilidad y redes de Bayes
 
