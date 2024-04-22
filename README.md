@@ -114,6 +114,14 @@ appointment
 
 En el código de estos tres ficheros encontrarás la explicación de cómo se codifica la red de bayes en pomegranate.
 
+#### Ejercicio
+
+Intenta calcular la probabilidad de llegar a tiempo o tarde a la cita, dependiendo de que el tren llegue puntual *y se produzca lluvia fuerte*.
+
+¿Ha cambiado la probabilidad de atender a la cita respecto al ejemplo anterior? ¿Por qué?
+
+Chequea la configuración en el fichero `inference_ejercicio.py`.
+
 ## Recursos sobre probabilidad y redes de Bayes
 
 Mi compañero [@alejandro](https://github.com/avidaldo) del curso de especialización en IA y Big Data del IES de Teis en la modalidad a distancia ha preparado estos recursos en castellano: [Matemáticas para Machine Learning](https://github.com/avidaldo/mates_ml).
