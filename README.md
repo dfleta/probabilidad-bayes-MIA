@@ -207,7 +207,7 @@ $$ P(X=x_i) = \sum_j(X=x_i, Y=y_j) $$
 
 ### Probabilidad condicional
 
-$$ P(a) = P(a|b) * P(b) + P(a|\neg b) * P(\neg b) $$
+$$ P(a) = P(a|b) P(b) + P(a|\neg b)  P(\neg b) $$
 
 ### Negación
 
