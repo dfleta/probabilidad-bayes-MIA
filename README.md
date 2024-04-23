@@ -67,7 +67,7 @@ Appointment toma los valores `{attend, miss}`. Es el único nodo padre de Train,
 
 ### Probabilidad conjunta
 
-Calculamos la probabilidad de un determinado evento dada una observación, una observación de todas las variables, por lo que hablamos de probabilidad conjunta o _joint probabililty_.
+Calculamos la probabilidad de un determinado evento dada una observación, una observación de todas las variables, por lo que hablamos de **probabilidad conjunta** o _joint probabililty_.
 
 ¿Cual es la probabilidad de que no llueva, no se realice mantenimiento, el tren llegue puntual y asistamos a la cita?
 
@@ -86,11 +86,11 @@ tensor([0.3402])
 
 ¿Cuáles son las distribuciones de probabilidades para todas las variables dada una evidencia, una observación?
 
-Dada una observación o evidencia $e$, aplicamos la inferencia por enumeración iterando sobre las probabilidades de las variables ocultas $y$ :
+Dada una observación o evidencia $e$, aplicamos la **inferencia por enumeración** iterando sobre las probabilidades de las variables ocultas $y$ :
 
  $$ P(X|e) = \frac{P(X,e)}{P(e)} = \alpha P(X,e) = \alpha \sum_{y} {P(X,e,y)} $$
 
-Con la observación de que el tren se ha retrasado, calculamos las distribuciones de probabilidad de las variables Rain, Maintenance y Appointment.
+Con la observación de que el tren se ha retrasado, calculamos las **distribuciones de probabilidad** de las variables Rain, Maintenance y Appointment.
 
 ```python
 $ python inference.py
@@ -116,7 +116,7 @@ En el código de estos tres ficheros encontrarás la explicación de cómo se co
 
 #### Ejercicio inferencia
 
-Intenta calcular la probabilidad de llegar a tiempo o tarde a la cita, dependiendo de que el tren llegue tarde (_delayed_) *y se produzca lluvia fuerte (heavy)*.
+Intenta calcular la probabilidad de llegar a tiempo o tarde a la cita, dependiendo de que el tren llegue tarde (_delayed_) y se produzca lluvia fuerte (_heavy_).
 
 ¿Ha cambiado la probabilidad de atender a la cita respecto al ejemplo anterior? ¿Por qué?
 
@@ -126,7 +126,7 @@ Chequea la configuración en el fichero `inference_ejercicio.py`.
 
 ### Rejection sampling
 
-Como la inferencia por enumeración puede resultar computacionalmente ineficiente, es posible implementar el cálculo de la distribución de la probabilidad de la variable "appoinment" (llegar a la cita) en función de la probabilidad condicionada a que el tren llegue tarde ("delayed"), mediante el método _rejection sampling_. 
+Como la inferencia por enumeración puede resultar computacionalmente ineficiente, es posible implementar el cálculo de la distribución de la probabilidad de la variable _appoinment_ (perder la cita, _miss_ o _attend_) en función de la probabilidad condicionada a que el tren llegue tarde (_delayed_), mediante el método _rejection sampling_. 
 
 $$ P(Appoinment| Train = delayed) = \frac{P(Appoinment, Train = delayed)}{P(Train = delayed)} = \alpha P(Appoinment, Train = delayed) = \alpha \sum_{y \in Rain, Maintenance } {P(Appoinment, Train = delayed,y)} $$
 
@@ -183,11 +183,11 @@ Recordad que esta práctica intenta cubrir los contenidos de los capítulos 12 _
 
 Los principios más importantes para comprender la teoría de probabilidades son:
 
-* La letra griega $\Omega$ (omega mayúscula) representa al espacio de muestras, y $\omega$ (omega minúscula) se refiere a los elementos de ese espacio, es decir, a los posibles mundos.
+* La letra griega $\Omega$ (omega mayúscula) representa el **espacio de muestras**, y $\omega$ (omega minúscula) se refiere a los elementos de ese espacio, es decir, a los **posibles mundos**.
 
-* Los mundos posibles son mútuamente **exclusivos** y **exhaustivos**: dos posibles mundos no pueden existir a la vez, y uno de los posibles mundos debe producirse.
+* Los posibles mundos son mútuamente **exclusivos** y **exhaustivos**: dos posibles mundos no pueden existir a la vez, y uno de los posibles mundos debe producirse.
 
-* Un modelo de probabilidad completamente especificado asocia una probabilidad numérica $P(ω$) con cada posible mundo.
+* Un modelo de probabilidad completamente especificado asocia una probabilidad numérica $P(ω)$ con cada posible mundo.
 
 * El axioma básico de la teoría de la probabilidad enuncia que todo mundo posible tiene una probabilidad entre 0 y 1, y que la probabilidad total del conjunto de posibles mundos es es 1:
 
