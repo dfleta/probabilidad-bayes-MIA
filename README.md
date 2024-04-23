@@ -128,7 +128,7 @@ Chequea la configuración en el fichero `inference_ejercicio.py`.
 
 Como la inferencia por enumeración puede resultar computacionalmente ineficiente, es posible implementar el cálculo de la distribución de la probabilidad de la variable _appoinment_ (perder la cita, _miss_ o _attend_) en función de la probabilidad condicionada a que el tren llegue tarde (_delayed_), mediante el método _rejection sampling_. 
 
-$$ P(Appoinment| Train = delayed) = \frac{P(Appoinment, Train = delayed)}{P(Train = delayed)} = \alpha P(Appoinment, Train = delayed) = \alpha \sum_{y \in Rain, Maintenance } {P(Appoinment, Train = delayed,y)} $$
+$$ P(Appoinment| Train = delayed) = \frac{P(Appoinment, Train = delayed)}{P(Train = delayed)} = \\ = \alpha P(Appoinment, Train = delayed) = \\ = \alpha \sum_{y \in Rain, Maintenance } {P(Appoinment, Train = delayed,y)} $$
 
 Se trata de tomar N muestras sobre la red de bayes y seleccionar aquellas que verifiquen que:
 
@@ -191,6 +191,6 @@ Los principios más importantes para comprender la teoría de probabilidades son
 
 * El axioma básico de la teoría de la probabilidad enuncia que todo mundo posible tiene una probabilidad entre 0 y 1, y que la probabilidad total del conjunto de posibles mundos es es 1:
 
-$ 0≤P(ω)≤1 $ para todo $\omega$
+$$ 0 \leq P(ω) \leq 1 \quad \forall \omega $$
 
 $$ \sum_{w\in\Omega} P(ω)=1 $$
