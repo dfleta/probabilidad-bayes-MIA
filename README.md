@@ -161,7 +161,11 @@ $$ P(Appoinment| Train = delayed) = < 0.616, 0.384>  $$
 
 ### Likelihood weighting
 
-En el ejemplo anterior se observa que en 10K muestras se rechazan aproximadamente el 80% de las muestras sampleadas. Esto es otro motivo de ineficiencia.
+En el ejemplo anterior se observa que en 10K muestras se rechazan aproximadamente el 80% de las muestras sampleadas. Esto es otro motivo de ineficiencia computacional.
+
+Podemos realizar el muestreo esta ve fijando el valor de las variables observadas, las evidencias, y no muestrelarlas. Calcularemos las probabilidades condicionales del resto de variables usando la red de Bayes o de creencia, y multiplicaremos cada muestra por su probabilidad.
+
+![Likelihood weighting](doc/likelihood_weigting.png "Likelihood weighting")
 
 ## Recursos sobre probabilidad y redes de Bayes
 
