@@ -116,36 +116,52 @@ En el código de estos tres ficheros encontrarás la explicación de cómo se co
 
 #### Ejercicio inferencia
 
-Intenta calcular la probabilidad de llegar a tiempo o tarde a la cita, dependiendo de que el tren llegue tarde ("delayed") *y se produzca lluvia fuerte ("heavy")*.
+Intenta calcular la probabilidad de llegar a tiempo o tarde a la cita, dependiendo de que el tren llegue tarde (_delayed_) *y se produzca lluvia fuerte (heavy)*.
 
 ¿Ha cambiado la probabilidad de atender a la cita respecto al ejemplo anterior? ¿Por qué?
 
 Chequea la configuración en el fichero `inference_ejercicio.py`.
 
-
+![resultado ejercicio inference](doc/resultado_inference_ejercicio.png "resultado ejercicio inference")
 
 ### Rejection sampling
 
-Como la inferencia por enumeración puede resultar computacionalmente ineficiente, es posible implementar el cálculo de la distribución de la probabilidad de la variable "appoinment" (llegar a la cita) en función de la probabilidad condicionada a que el tren llegue tarde ("delayed"), mediante el método _rejection sampling_. Se trata de tomar N muestras sobre la red de bayes y seleccionar aquellas que verifiquen que:
+Como la inferencia por enumeración puede resultar computacionalmente ineficiente, es posible implementar el cálculo de la distribución de la probabilidad de la variable "appoinment" (llegar a la cita) en función de la probabilidad condicionada a que el tren llegue tarde ("delayed"), mediante el método _rejection sampling_. 
+
+$$ P(Appoinment| Train = delayed) = \frac{P(Appoinment, Train = delayed)}{P(Train = delayed)} = \alpha P(Appoinment, Train = delayed) = \alpha \sum_{y \in Rain, Maintenance } {P(Appoinment, Train = delayed,y)} $$
+
+Se trata de tomar N muestras sobre la red de bayes y seleccionar aquellas que verifiquen que:
 
 ```python
-[?, ?, 1, 0]  [rain, maintenance, "delayed", "attend"]`
+[?, ?, 1, 0]  [rain, maintenance, "delayed", "attend"]
 [?, ?, 1, 1]  [rain, maintenance, "delayed", "miss"]
 ```
 
-que corresponden a las de la figura:
+Si el caso fuese Rain = light y Train = ontime, el muestreo correspondería a la figura:
 
-![](doc/rejection_sampling.png)
+!["rejection samplig"](doc/rejection_sampling.png "rejection samplig")
 
-Es un cálculo aproximado de la probabilidad, que variará en función del número de muestras sampleadas que categoricemos como "attend" o "miss", por lo que la ejecución del método en `sample.py` arroja ligeras variaciones en el conteo de cada muestra.
+_Rejection samplig_ un cálculo aproximado de la probabilidad, que variará en función del número de muestras sampleadas que categoricemos como _attend_ o _miss_, por lo que la ejecución de `sample.py` arroja ligeras variaciones en el conteo de cada muestra.
+
+Consulta el módulo `sammple.py`.
 
 ```python
 $ python sample.py
 
 Counter({'attend': 1224, 'miss': 884})
+# y en sucesivos muestreos
+Counter({'attend': 1216, 'miss': 821})
+Counter({'attend': 1231, 'miss': 843})
+Counter({'attend': 1340, 'miss': 826})
 ```
 
-Consulta el módulo `sammple.py`.
+¿Cuál es la distribución de probabilidad normalizada? Para el último muestreo:
+
+$$ P(Appoinment| Train = delayed) = < 0.616, 0.384>  $$
+
+### Likelihood weighting
+
+En el ejemplo anterior se observa que en 10K muestras se rechazan aproximadamente el 80% de las muestras sampleadas. Esto es otro motivo de ineficiencia.
 
 ## Recursos sobre probabilidad y redes de Bayes
 
