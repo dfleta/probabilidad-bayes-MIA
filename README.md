@@ -181,6 +181,8 @@ Recordad que esta práctica intenta cubrir los contenidos de los capítulos 12 _
 
 ![Espacio de muestras](doc/espacio_de_muestras.png "Espacio de muestras tirada de dos dados")
 
+### Principios
+
 Los principios más importantes para comprender la teoría de probabilidades son:
 
 * La letra griega $\Omega$ (omega mayúscula) representa el **espacio de muestras**, y $\omega$ (omega minúscula) se refiere a los elementos de ese espacio, es decir, a los **posibles mundos**.
@@ -194,3 +196,23 @@ Los principios más importantes para comprender la teoría de probabilidades son
 $$ 0 \leq P(ω) \leq 1 \quad \forall \omega $$
 
 $$ \sum_{w\in\Omega} P(ω)=1 $$
+
+### Marginalización
+
+$$ P(a) = P(a,b) + P(a, \neg b) $$
+
+también expresada para variables aleatorias como:
+
+$$ P(X=x_i) = \sum_j(X=x_i, Y=y_j) $$
+
+### Probabilidad condicional
+
+$$ P(a) = P(a|b) * P(b) + P(a|\neg b) * P(\neg b) $$
+
+### Negación
+
+$$ P(a) = 1 - P(\neg a) $$
+
+### Inclusión - Exclusión
+
+$$ P(a \vee b) = P(a) + P(B) - P(a \wedge b)$$
