@@ -213,8 +213,8 @@ $$ P(A) = \sum_i P(A|B_i) P(B_i)$$
 
 ### Negación
 
-$$ P(a) = 1 - P(\neg a) $$
+$$ P(A) = 1 - P(\neg A) $$
 
 ### Inclusión - Exclusión
 
-$$ P(a \vee b) = P(a) + P(B) - P(a \wedge b)$$
+$$ P(A \vee B) = P(A) + P(B) - P(A \wedge B)$$
