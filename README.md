@@ -199,15 +199,17 @@ $$ \sum_{w\in\Omega} P(ω)=1 $$
 
 ### Marginalización
 
-$$ P(a) = P(a,b) + P(a, \neg b) $$
+$$ P(A) = P(A,B) + P(A, \neg B) $$
 
 también expresada para variables aleatorias como:
 
 $$ P(X=x_i) = \sum_j(X=x_i, Y=y_j) $$
 
-### Probabilidad condicional
+### Teorema de la Probabilidad Total
 
-$$ P(a) = P(a|b) P(b) + P(a|\neg b)  P(\neg b) $$
+$$ P(A) = P(A|B) P(B) + P(A|\neg B)  P(\neg B) $$
+
+$$ P(A) = \sum_i P(A|B_i) P(B_i)$$
 
 ### Negación
 
