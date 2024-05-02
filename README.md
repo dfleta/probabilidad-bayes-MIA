@@ -220,7 +220,7 @@ $$ P(A \cap B) = P(A)P(B) $$
 
 El espacio de muestras de un dado de seis caras es $\Omega = \{ 1, 2, 3, 4, 5, 6 \}$
 
-En un dado sin trucar, cada muestra tiene la misma probabilidad $P(\omega) = 1 /6$. 
+En un dado sin trucar, cada muestra tiene la misma probabilidad $P(\omega) = 1/6$. 
 Si lanzamos dos dados, el resultado de cada dado es independiente del otro. ¿Cuál es la probabilidad de obtener dos treses?
 
 $$ P(tres \cap tres) = P(tres)P(tres) = (1/6) \times (1/6) = 1/36 $$
@@ -230,7 +230,9 @@ Este ejemplo también sirve para demostrar que dos sucesos son independientes. D
 La probabilidad de obtener un tres en uno de los dados es $1/6$, igual que la probabilidad de obtener $1/6$ en el otro dado. Por tanto: $P(A)P(B)= (1/6) \times (1/6) = 1/36$
 
 La probabilidad de obtener dos treses se puede calcular dividiendo el número de las muestras que satisfacen esa condición entre el número total de muestras:
+
 $$ P(A \cap B) = \frac {Número \ de \  muestras \ en \ A \cap B}{Número \ total \ de \ muestras \ en \ \Omega } $$
+
 El número total de muestras en $\Omega$ es $36$ (son las posibles combinaciones de los 6 valores de cada uno de los dos dados). El número de muestras con dos $treses$ es $1$. Por tanto $P(F) = 1/36$.
 Se verifica, por tanto, que los sucesos son independientes porque  $P(A)P(B)= 1/36 = P(A \cap B)$.
 
