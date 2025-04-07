@@ -122,7 +122,22 @@ Intenta calcular la probabilidad de llegar a tiempo o tarde a la cita, dependien
 
 Chequea la configuración en el fichero `inference_ejercicio.py`.
 
-![resultado ejercicio inference](doc/resultado_inference_ejercicio.png "resultado ejercicio inference")
+```python
+% python3 inference_ejercicio.py
+rain
+    none: 0.0000
+    light: 0.0000
+    heavy: 1.0000
+maintenance
+    yes: 0.1176
+    no: 0.8824
+train
+    on time: 0.0000
+    delayed: 1.0000
+appointment
+    attend: 0.6000
+    miss: 0.4000
+```
 
 ### Rejection sampling
 
@@ -141,9 +156,10 @@ Si el caso fuese Rain = light y Train = ontime, el muestreo correspondería a la
 
 !["rejection samplig"](doc/rejection_sampling.png "rejection samplig")
 
+
 _Rejection samplig_ un cálculo aproximado de la probabilidad, que variará en función del número de muestras sampleadas que categoricemos como _attend_ o _miss_, por lo que la ejecución de `sample.py` arroja ligeras variaciones en el conteo de cada muestra.
 
-Consulta el módulo `sammple.py`.
+Consulta el módulo `sample.py`.
 
 ```python
 $ python sample.py
