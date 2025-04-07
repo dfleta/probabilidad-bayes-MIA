@@ -2,7 +2,7 @@ import torch
 from model import model
 
 # Calculamos la probabilidad de un determinado evento
-# dada una observacion.
+# dada una observacion.
 
 rain_values = ["none", "light", "heavy"]
 maintenance_values = ["yes", "no"]
@@ -13,7 +13,7 @@ appoinment_values = ["attend", "miss"]
 # Cual es la probabilidad de que no llueva,
 # no se realice mantenimiento,
 # el tren llegue puntual
-# y asistamos a la cita?
+# y asistamos a la cita?
 
 probability = model.probability(
     torch.as_tensor(

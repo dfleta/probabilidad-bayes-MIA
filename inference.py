@@ -8,21 +8,21 @@ from model import model
 X = torch.tensor(
     [
         [
-            -1, # rain [0, 1, 2] == ["none", "light", "heavy"] -1 == no observable
-            -1, # maintenance [0, 1] = ["yes", "no"] -1 == no observable
-             1, # train [0, 1] == ["on time", "delayed"] -1 == no observable
-            -1, # appoinment [0, 1] == ["attend", "miss"] -1 == no observable
+            -1,  # rain [0, 1, 2] == ["none", "light", "heavy"] -1 == no observable
+            -1,  # maintenance [0, 1] = ["yes", "no"] -1 == no observable
+            1,  # train [0, 1] == ["on time", "delayed"] -1 == no observable
+            -1,  # appoinment [0, 1] == ["attend", "miss"] -1 == no observable
         ]
     ]
 )
 
 mask = X != -1
 # mask = tensor([[False, False,  True, False]])
-'''
+"""
 torch.masked.MaskedTensor where the mask specifies 
 which variables are observed (mask = True) 
 and which ones are not observed (mask = False) for each of the values
-'''
+"""
 
 X_masked = torch.masked.MaskedTensor(X, mask)
 # X_masked = MaskedTensor(
